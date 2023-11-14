@@ -6,7 +6,7 @@ const web = require('./routes/web')
 const connectDB = require('./db/connectDB')
 const fileUpload = require("express-fileupload")
 const cookieParser = require('cookie-parser')
-
+const cors = require('cors')
 
 //cookie parser
 app.use(cookieParser())
@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(fileUpload({useTempFiles:true}));
 
 app.use('/api',web)
-
+app.use(cors())
 
 
 
